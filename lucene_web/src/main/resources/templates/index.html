@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <title>计算机学院搜索引擎</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"></link>
+</head>
+<body style="background-color: #fff8ee;">
+    <div class="container">
+        <div class="row screen-center">
+            <div class="row text-center">
+                <img src="../static/img/index_logo.jpg" th:src="@{/img/index_logo.jpg}" alt="logo"></img>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <input type="text" class="form-control index-input" id="search-content"></input>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-success btn-index-search" id = "btn-search">搜索</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="../static/js/common.js" th:src="@{/js/common.js}"></script>
+    <script src="../static/js/index.js" th:src="@{/js/index.js}"></script>
+</body>
+</html>

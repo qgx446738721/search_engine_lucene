@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <title>搜索结果</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"></link>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- 头部搜索框 -->
+        <div class="row search-top pinned">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-10">
+                        <input type="text" class="form-control index-input" id="search-content" th:value="${message.searchString}"></input>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success btn-index-search" id = "btn-search">搜索</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+
+        <!-- 搜素结果列表 -->
+        <div class="search-item row" th:each="item : ${search_result_list}">
+            <h3><a href="#" th:href="${item.url}" th:text="${item.title}" target="_blank">这是标题</a></h3>
+            <a href="#" th:text="${item.url}" th:href="${item.url}">链接</a>
+        </div>
+
+        <!-- 分页 -->
+        <div class="row bottom-pagin-item">
+            <ul class="pagination pagination-lg" id="pagin-list">
+            </ul>
+        </div>
+    </div>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script th:inline="javascript">
+    /*<![CDATA[*/
+        var content = /*[[${message.searchString}]]*/;
+        var startId = /*[[${message.startPageId}]]*/;
+        var endId = /*[[${message.endPageId}]]*/;
+        var pageId = /*[[${message.pageId}]]*/;
+    /*]]>*/
+    </script>
+
+    <script src="../static/js/common.js" th:src="@{/js/common.js}"></script>
+    <script src="../static/js/search_result.js" th:src="@{/js/search_result.js}"></script>
+</body>
+</html>
